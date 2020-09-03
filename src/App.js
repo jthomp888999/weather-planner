@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 const App = () => {
+  // useState hold json object with keys
   const [weatherData, setWeatherData] = useState({
     "clouds": "",
     "feels_like": "",
@@ -8,6 +9,7 @@ const App = () => {
     "wind_speed": ""
   });
 
+  // useEffect to hit api and populate state
   useEffect(() => {
     fetch('/current')
     .then(res => {
@@ -25,6 +27,7 @@ const App = () => {
 
   return (
     <pre>
+      {/* For now just returning a string until creation of interface */}
       {JSON.stringify(weatherData)}
     </pre>
   )

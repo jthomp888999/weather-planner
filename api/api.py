@@ -16,7 +16,7 @@ URL = "https://api.openweathermap.org/data/2.5/onecall?"\
     f"&units={UNITS}"\
     f"&appid={KEY}"
 
-@app.route("/current")
+@app.route("/api/current", methods=["GET"])
 def get_current():
     r = get(URL)
     return r.json()

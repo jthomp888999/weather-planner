@@ -1,24 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-function App() {
+const App = () => {
+  const [weatherData, setWeatherData] = useState({
+    "clouds": "",
+    "feels_like": "",
+    "humidity": "",
+    "wind_speed": ""
+  });
+
+  useEffect(() => {
+    console.log("fetching...")
+    fetch('/current')
+    .then(res => {
+      return res.json()
+    })
+    .then(data => {
+      console.log(data)
+      setWeatherData({
+        "clouds": data.current.clouds,
+        "feels_like": data.current.feels_like,
+        "humidity": data.current.humidity,
+        "wind_speed": data.current.wind_speed
+    });
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <pre>
+      {JSON.stringify(weatherData)}
+    </pre>
+  )
 }
 
 export default App;

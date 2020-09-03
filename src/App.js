@@ -9,13 +9,11 @@ const App = () => {
   });
 
   useEffect(() => {
-    console.log("fetching...")
     fetch('/current')
     .then(res => {
       return res.json()
     })
     .then(data => {
-      console.log(data)
       setWeatherData({
         "clouds": data.current.clouds,
         "feels_like": data.current.feels_like,

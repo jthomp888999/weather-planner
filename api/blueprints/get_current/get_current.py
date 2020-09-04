@@ -3,6 +3,8 @@ from os import environ
 from flask import Flask, Blueprint
 from requests import get
 
+from api.common import url
+
 KEY = environ["API_KEY"]
 LAT = 30.45
 LON = -91.8

@@ -16,6 +16,6 @@ def nextseven():
     r = get(url_gen(EXCLUDE))
     d = r.json()
 
-    data = {"test": "it works i guess"}
+    # data = {"test": "it works i guess"}
 
     return d

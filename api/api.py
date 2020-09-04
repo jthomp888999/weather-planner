@@ -1,6 +1,6 @@
 from flask import Flask
 
-from blueprints import current
+from api.blueprints import current
 
 app = Flask(__name__)
 

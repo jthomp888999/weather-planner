@@ -17,10 +17,10 @@ const Current = () => {
     })
     .then(data => {
       setWeatherData({
-        "clouds": data.current.clouds,
-        "feels_like": data.current.feels_like,
-        "humidity": data.current.humidity,
-        "wind_speed": data.current.wind_speed
+        "clouds": data.clouds,
+        "feels_like": data.feels_like,
+        "humidity": data.humidity,
+        "wind_speed": data.wind_speed
     });
     });
   }, []);

@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
+import Day from "./day"
+
 const NextSeven = () => {
   // useState hold json object with keys
   const [weatherData, setWeatherData] = useState({
@@ -14,7 +16,7 @@ const NextSeven = () => {
     })
     .then(data => {
       setWeatherData({
-        "daily": data.daily
+        "daily": data
     });
     });
   }, []);
@@ -22,7 +24,17 @@ const NextSeven = () => {
   return (
     <pre>
       {/* For now just returning a string until creation of interface */}
-      {JSON.stringify(weatherData)}
+      {Object.keys(weatherData.daily).map((key, index) => (
+        <div>
+            <Day 
+                date={weatherData.daily[key].date} 
+                clouds={weatherData.daily[key].clouds}
+                feels_like={weatherData.daily[key].feels_like}
+                humidity={weatherData.daily[key].humidity}
+                percip={weatherData.daily[key].percip}
+                wind_speed={weatherData.daily[key].wind_speed}
+                />
+        </div>))}
     </pre>
   )
 }

@@ -1,4 +1,5 @@
 from os import environ
+from datetime import datetime, timedelta
 import json
 
 from flask import Flask, Blueprint
@@ -16,7 +17,10 @@ def get_current():
     r = get(url_gen(EXCLUDE))
     d = r.json()["current"]
 
+    print(d)
+
     data = {
+        "date": datetime.fromtimestamp(d["dt"]),
        "clouds": d["clouds"],
        "feels_like": d["feels_like"],
        "humidity": d["humidity"],

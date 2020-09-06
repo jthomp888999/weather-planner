@@ -17,6 +17,7 @@ const Current = () => {
     })
     .then(data => {
       setWeatherData({
+        "date": data.date,
         "clouds": data.clouds,
         "feels_like": data.feels_like,
         "humidity": data.humidity,

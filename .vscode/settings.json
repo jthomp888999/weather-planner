@@ -1,5 +1,7 @@
 {
     "python.pythonPath": "/home/jt/.local/share/virtualenvs/api-TYZgyYxo/bin/python",
+    "python.linting.pep8Enabled": true,
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "editor.formatOnSave": true
 }

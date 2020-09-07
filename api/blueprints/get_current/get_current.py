@@ -12,6 +12,7 @@ EXCLUDE = "minutely,hourly,daily"
 
 current = Blueprint('current', __name__)
 
+
 @current.route("/api/current", methods=["GET"])
 def get_current():
     r = get(url_gen(EXCLUDE))
@@ -21,10 +22,10 @@ def get_current():
 
     data = {
         "date": datetime.fromtimestamp(d["dt"]),
-       "clouds": d["clouds"],
-       "feels_like": d["feels_like"],
-       "humidity": d["humidity"],
-       "wind_speed": d["wind_speed"]
+        "clouds": d["clouds"],
+        "feels_like": d["feels_like"],
+        "humidity": d["humidity"],
+        "wind_speed": d["wind_speed"]
     }
 
     return data

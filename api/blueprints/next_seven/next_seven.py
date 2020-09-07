@@ -12,13 +12,14 @@ EXCLUDE = "current,minutely,hourly"
 
 next_seven = Blueprint('next_seven', __name__)
 
+
 @next_seven.route("/api/nextseven", methods=["GET"])
 def nextseven():
     r = get(url_gen(EXCLUDE))
     week = r.json()["daily"]
 
     data = []
-    day = {} 
+    day = {}
 
     for i in range(len(week)):
         day["date"] = datetime.fromtimestamp(week[i]['dt'])
@@ -30,6 +31,6 @@ def nextseven():
 
         day_copy = day.copy()
         data.append(day_copy)
-            
+
     return jsonify(data)
     # return jsonify(week)

@@ -1,11 +1,12 @@
 import React from 'react'
 
 const Day = (props) => {
+  const { date, clouds, feels_like, humidity, percip, wind_speed } = props
 
   return (
-    <div>
+    <>
       {JSON.stringify(props)}
-    </div>
+    </>
   )
 }
 

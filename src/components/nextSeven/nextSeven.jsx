@@ -25,9 +25,8 @@ const NextSeven = () => {
     <pre>
       {/* For now just returning a string until creation of interface */}
       {Object.keys(weatherData.daily).map((key, index) => (
-        <div>
+        <div key={key}>
           <Day
-            key={index}
             date={weatherData.daily[key].date}
             clouds={weatherData.daily[key].clouds}
             feels_like={weatherData.daily[key].feels_like}

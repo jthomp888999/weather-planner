@@ -33,4 +33,3 @@ def nextseven():
         data.append(day_copy)
 
     return jsonify(data)
-    # return jsonify(week)

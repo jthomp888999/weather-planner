@@ -18,8 +18,6 @@ def get_current():
     r = get(url_gen(EXCLUDE))
     d = r.json()["current"]
 
-    print(d)
-
     data = {
         "date": datetime.fromtimestamp(d["dt"]),
         "clouds": d["clouds"],

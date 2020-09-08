@@ -24,7 +24,7 @@ def nextseven():
     for i in range(len(week)):
         day["date"] = datetime.fromtimestamp(week[i]['dt'])
         day["clouds"] = week[i]["clouds"]
-        day["percip"] = week[i]["pop"]
+        day["percip"] = week[i]["pop"]*100
         day['feels_like'] = week[i]['feels_like']
         day["humidity"] = week[i]["humidity"]
         day["wind_speed"] = week[i]["wind_speed"]

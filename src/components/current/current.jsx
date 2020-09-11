@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import CurrentCard from "./currentCard"
+
 const Current = () => {
   // useState hold json object with keys
   const [weatherData, setWeatherData] = useState({
@@ -28,8 +30,7 @@ const Current = () => {
 
   return (
     <pre>
-      {/* For now just returning a string until creation of interface */}
-      {JSON.stringify(weatherData)}
+      <CurrentCard data={weatherData} />
     </pre>
   )
 }

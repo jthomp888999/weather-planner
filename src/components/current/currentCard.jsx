@@ -30,7 +30,6 @@ export default function CurrentCard(props) {
 
   return (
     < Card className={classes.root} >
-      {console.log(props.data)}
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {date}

@@ -5,6 +5,7 @@ const Day = (props) => {
 
   return (
     <>
+      {console.log(props)}
       {JSON.stringify(props)}
     </>
   )
